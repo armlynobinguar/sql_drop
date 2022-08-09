@@ -53,3 +53,7 @@ FROM films;
 
 SELECT COUNT(DISTINCT country)
 FROM films;
+
+SELECT *
+FROM films
+WHERE release_year = 2016;
