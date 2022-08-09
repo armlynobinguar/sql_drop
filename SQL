@@ -40,3 +40,6 @@ FROM roles;
 
 SELECT COUNT(*)
 FROM people;
+
+SELECT COUNT(birthdate)
+FROM people;
