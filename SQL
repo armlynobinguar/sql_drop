@@ -142,3 +142,7 @@ AND duration > 120;
 SELECT title, language
 FROM films
 WHERE language IN ('English', 'Spanish', 'French');
+
+SELECT title, certification
+FROM films
+WHERE certification IN ('NC-17', 'R');
