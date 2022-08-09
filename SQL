@@ -73,3 +73,7 @@ WHERE language = 'French';
 SELECT name, birthdate
 FROM people
 WHERE birthdate = '1974-11-11';
+
+SELECT COUNT(*)
+FROM films
+WHERE language = 'Hindi';
