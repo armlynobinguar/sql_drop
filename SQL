@@ -19,3 +19,6 @@ FROM people;
 
 SELECT title
 FROM films;
+
+SELECT title, release_year
+FROM films;
