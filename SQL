@@ -10,3 +10,6 @@ AS result;
 
 SELECT title
 FROM films;
+
+SELECT release_year
+FROM films;
