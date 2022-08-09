@@ -180,3 +180,6 @@ FROM films;
 
 SELECT MIN(duration)
 FROM films;
+
+SELECT MAX(duration)
+FROM films;
