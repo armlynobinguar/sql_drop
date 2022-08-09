@@ -138,3 +138,7 @@ SELECT title, release_year
 FROM films
 WHERE release_year IN (1990, 2000)
 AND duration > 120;
+
+SELECT title, language
+FROM films
+WHERE language IN ('English', 'Spanish', 'French');
