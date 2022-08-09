@@ -5,4 +5,5 @@ AS result;
 SELECT 'SQL'
 AS result;
 
-V
+SELECT 'SQL is cool'
+AS result;
