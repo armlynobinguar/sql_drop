@@ -150,3 +150,7 @@ WHERE certification IN ('NC-17', 'R');
 SELECT name
 FROM people
 WHERE deathdate IS NULL;
+
+SELECT title
+FROM films
+WHERE budget IS NULL;
