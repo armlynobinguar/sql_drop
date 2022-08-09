@@ -31,3 +31,6 @@ FROM films;
 
 SELECT DISTINCT country
 FROM films;
+
+SELECT DISTINCT certification
+FROM films;
