@@ -183,3 +183,6 @@ FROM films;
 
 SELECT MAX(duration)
 FROM films;
+
+SELECT SUM(gross)
+FROM films;
