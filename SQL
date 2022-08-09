@@ -91,3 +91,9 @@ SELECT *
 FROM films
 WHERE release_year > 2000
 AND language = 'Spanish';
+
+SELECT *
+FROM films
+WHERE release_year > 2000
+AND release_year < 2010
+AND language = 'Spanish';
