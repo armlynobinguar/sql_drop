@@ -1,3 +1,6 @@
 -- Try running me!
 SELECT 'DataCamp <3 SQL'
 AS result;
+
+SELECT 'SQL'
+AS result;
