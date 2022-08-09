@@ -146,3 +146,7 @@ WHERE language IN ('English', 'Spanish', 'French');
 SELECT title, certification
 FROM films
 WHERE certification IN ('NC-17', 'R');
+
+SELECT name
+FROM people
+WHERE deathdate IS NULL;
