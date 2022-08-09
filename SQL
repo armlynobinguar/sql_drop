@@ -81,3 +81,8 @@ WHERE language = 'Hindi';
 SELECT *
 FROM films
 WHERE certification = 'R';
+
+SELECT title, release_year
+FROM films
+WHERE release_year < 2000
+AND language = 'Spanish';
