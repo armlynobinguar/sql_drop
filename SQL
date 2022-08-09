@@ -174,3 +174,6 @@ WHERE name NOT LIKE 'A%';
 
 SELECT SUM(duration)
 FROM films;
+
+SELECT AVG(duration)
+FROM films;
