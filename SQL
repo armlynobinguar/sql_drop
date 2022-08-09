@@ -186,3 +186,6 @@ FROM films;
 
 SELECT SUM(gross)
 FROM films;
+
+SELECT AVG(gross)
+FROM films;
