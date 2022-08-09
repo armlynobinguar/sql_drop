@@ -195,3 +195,7 @@ FROM films;
 
 SELECT MAX(gross)
 FROM films;
+
+SELECT SUM(gross)
+FROM films
+WHERE release_year >= 2000;
