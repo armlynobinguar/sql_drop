@@ -28,3 +28,6 @@ FROM films;
 
 SELECT *
 FROM films;
+
+SELECT DISTINCT country
+FROM films;
