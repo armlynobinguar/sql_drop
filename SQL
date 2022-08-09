@@ -46,3 +46,6 @@ FROM people;
 
 SELECT COUNT(DISTINCT birthdate)
 FROM people;
+
+SELECT COUNT(DISTINCT language)
+FROM films;
