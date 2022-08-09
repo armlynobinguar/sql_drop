@@ -199,3 +199,7 @@ FROM films;
 SELECT SUM(gross)
 FROM films
 WHERE release_year >= 2000;
+
+SELECT AVG(gross)
+FROM films
+where title LIKE 'A%';
