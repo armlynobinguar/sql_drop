@@ -207,3 +207,7 @@ where title LIKE 'A%';
 SELECT MIN(gross)
 FROM films
 WHERE release_year = 1994;
+
+SELECT MAX(gross)
+FROM films
+WHERE release_year BETWEEN 2000 AND 2012;
