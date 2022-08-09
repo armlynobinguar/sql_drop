@@ -192,3 +192,6 @@ FROM films;
 
 SELECT MIN(gross)
 FROM films;
+
+SELECT MAX(gross)
+FROM films;
