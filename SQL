@@ -77,3 +77,7 @@ WHERE birthdate = '1974-11-11';
 SELECT COUNT(*)
 FROM films
 WHERE language = 'Hindi';
+
+SELECT *
+FROM films
+WHERE certification = 'R';
