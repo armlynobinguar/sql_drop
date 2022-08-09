@@ -37,3 +37,6 @@ FROM films;
 
 SELECT DISTINCT role
 FROM roles;
+
+SELECT COUNT(*)
+FROM people;
