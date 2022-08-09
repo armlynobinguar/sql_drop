@@ -49,3 +49,7 @@ FROM people;
 
 SELECT COUNT(DISTINCT language)
 FROM films;
+
+
+SELECT COUNT(DISTINCT country)
+FROM films;
