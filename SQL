@@ -171,3 +171,6 @@ WHERE name LIKE '_r%';
 SELECT name
 FROM people
 WHERE name NOT LIKE 'A%';
+
+SELECT SUM(duration)
+FROM films;
