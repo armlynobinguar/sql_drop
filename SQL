@@ -25,3 +25,6 @@ FROM films;
 
 SELECT title, release_year, country
 FROM films;
+
+SELECT *
+FROM films;
