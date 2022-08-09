@@ -214,3 +214,6 @@ WHERE release_year BETWEEN 2000 AND 2012;
 
 SELECT title, gross - budget AS net_profit
 FROM films;
+
+SELECT title, duration / 60.0 AS duration_hours
+FROM films;
