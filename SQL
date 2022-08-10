@@ -256,3 +256,8 @@ SELECT *
 FROM films
 WHERE release_year <> 2015
 ORDER BY duration;
+
+SELECT title, gross
+FROM films
+WHERE title LIKE 'M%'
+ORDER BY title;
