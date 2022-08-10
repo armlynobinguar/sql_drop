@@ -297,3 +297,7 @@ GROUP BY release_year;
 SELECT release_year, AVG(duration)
 FROM films
 GROUP BY release_year;
+
+SELECT release_year, MAX(budget)
+FROM films
+GROUP BY release_year;
