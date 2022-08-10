@@ -334,3 +334,8 @@ FROM films;
 SELECT release_year, budget, gross
 FROM films
 WHERE release_year > 1990;
+
+SELECT release_year
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year;
