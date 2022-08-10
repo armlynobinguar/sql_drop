@@ -265,3 +265,7 @@ ORDER BY title;
 SELECT imdb_score, film_id
 FROM reviews
 ORDER BY imdb_score DESC;
+
+SELECT title
+FROM films
+ORDER BY title DESC;
