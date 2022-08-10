@@ -305,3 +305,7 @@ GROUP BY release_year;
 SELECT imdb_score, COUNT(*)
 FROM reviews
 GROUP BY imdb_score;
+
+SELECT release_year, MIN(gross)
+FROM films
+GROUP BY release_year;
