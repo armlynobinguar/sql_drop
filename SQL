@@ -330,3 +330,7 @@ ORDER BY country, release_year;
 
 SELECT release_year, budget, gross
 FROM films;
+
+SELECT release_year, budget, gross
+FROM films
+WHERE release_year > 1990;
