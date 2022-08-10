@@ -313,3 +313,7 @@ GROUP BY release_year;
 SELECT language, SUM(gross)
 FROM films
 GROUP BY language;
+
+SELECT country, SUM(budget)
+FROM films
+GROUP BY country;
