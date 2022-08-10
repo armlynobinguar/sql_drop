@@ -293,3 +293,7 @@ ORDER BY name, birthdate;
 SELECT release_year, COUNT(*)
 FROM films
 GROUP BY release_year;
+
+SELECT release_year, AVG(duration)
+FROM films
+GROUP BY release_year;
