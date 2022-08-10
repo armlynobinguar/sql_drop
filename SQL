@@ -309,3 +309,7 @@ GROUP BY imdb_score;
 SELECT release_year, MIN(gross)
 FROM films
 GROUP BY release_year;
+
+SELECT language, SUM(gross)
+FROM films
+GROUP BY language;
