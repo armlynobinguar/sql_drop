@@ -339,3 +339,8 @@ SELECT release_year
 FROM films
 WHERE release_year > 1990
 GROUP BY release_year;
+
+SELECT release_year,
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year;
