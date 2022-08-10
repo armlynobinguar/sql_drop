@@ -289,3 +289,7 @@ ORDER BY certification, release_year;
 SELECT name, birthdate
 FROM people
 ORDER BY name, birthdate;
+
+SELECT release_year, COUNT(*)
+FROM films
+GROUP BY release_year;
