@@ -273,3 +273,7 @@ ORDER BY title DESC;
 SELECT title, duration
 FROM films
 ORDER BY duration DESC;
+
+SELECT birthdate, name
+FROM people
+ORDER BY birthdate, name;
