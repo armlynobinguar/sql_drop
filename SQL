@@ -242,3 +242,7 @@ ORDER BY name;
 SELECT name
 FROM people
 ORDER BY birthdate;
+
+SELECT birthdate, name
+FROM people
+ORDER BY birthdate;
