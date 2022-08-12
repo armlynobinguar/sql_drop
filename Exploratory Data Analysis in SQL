@@ -323,3 +323,15 @@ SELECT startdates.tag,
           -- Again, what needs to match between tables?
           ON startdates.tag = so_max.tag
          AND so_max.date = '2018-09-25';
+
+DROP TABLE IF EXISTS correlations;
+
+-- Create temp table 
+CREATE TEMP TABLE correlations AS
+-- Select each correlation
+SELECT 'profits'::varchar AS measure,
+       -- Compute correlations
+       corr(profits, profits) AS profits,
+       corr(profits, profits_change) AS profits_change,
+       corr(profits, revenues_change) AS revenues_change
+  FROM fortune500;
