@@ -73,3 +73,9 @@ SELECT company_original.name, title, rank
              fortune500.ticker
  -- For clarity, order by rank
  ORDER BY rank; 
+
+-- Select the original value
+SELECT profits_change, 
+	   -- Cast profits_change
+       CAST(profits_change AS integer) AS profits_change_int
+  FROM fortune500;
