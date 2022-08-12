@@ -183,3 +183,11 @@ SELECT trunc(employees, -4) AS employee_bin,
  GROUP BY employee_bin
  -- Use alias to order
  ORDER BY employee_bin;
+ 
+ -- Select the min and max of question_count
+SELECT min(question_count), 
+       max(question_count)
+  -- From what table?
+  FROM stackoverflow
+ -- For tag dropbox
+ WHERE tag='dropbox';
