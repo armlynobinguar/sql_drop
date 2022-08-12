@@ -7,3 +7,8 @@ SELECT count(*)
 -- and alias as missing
 SELECT count(*) - count(ticker) AS missing
   FROM fortune500;
+
+-- Select the count of profits_change, 
+-- subtract from total number of rows, and alias as missing
+SELECT count(*) - count(profits_change) AS missing
+  FROM fortune500;
