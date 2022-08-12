@@ -105,3 +105,9 @@ SELECT revenues_change::integer, count(*)
  GROUP BY revenues_change::integer 
  -- order by the values of revenues_change
  ORDER BY revenues_change;
+ 
+ -- Count rows 
+SELECT count(*)
+  FROM fortune500
+ -- Where...
+ WHERE revenues_change > 0;
