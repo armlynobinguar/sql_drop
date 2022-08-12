@@ -128,3 +128,10 @@ SELECT unanswered_count/question_count::numeric AS computed_pct,
  -- Select rows where question_count is not 0
  WHERE question_count != 0
  LIMIT 10;
+
+-- Select min, avg, max, and stddev of fortune500 profits
+SELECT min(profits),
+       avg(profits),
+       max(profits),
+       stddev(profits)
+  FROM fortune500;
