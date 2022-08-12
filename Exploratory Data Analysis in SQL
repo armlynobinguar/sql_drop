@@ -191,3 +191,7 @@ SELECT min(question_count),
   FROM stackoverflow
  -- For tag dropbox
  WHERE tag='dropbox';
+ 
+ -- Create lower and upper bounds of bins
+SELECT generate_series(2200, 3050, 50) AS lower,
+       generate_series(2250, 3100, 50) AS upper;
