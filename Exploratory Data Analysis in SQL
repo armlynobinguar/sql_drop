@@ -98,3 +98,10 @@ SELECT revenues_change, count(*)
  GROUP BY revenues_change 
  -- order by the values of revenues_change
  ORDER BY revenues_change;
+
+-- Select the count of each revenues_change integer value
+SELECT revenues_change::integer, count(*) 
+  FROM fortune500
+ GROUP BY revenues_change::integer 
+ -- order by the values of revenues_change
+ ORDER BY revenues_change;
