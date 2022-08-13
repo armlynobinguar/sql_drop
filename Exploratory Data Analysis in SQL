@@ -674,3 +674,14 @@ SELECT to_char(date_created, 'day') AS day,
  -- Order by integer value of the day of the week 
  -- the request was created
  ORDER BY EXTRACT(DOW FROM date_created);
+
+-- Aggregate daily counts by month
+SELECT date_trunc('month', day) AS month,
+       avg(count)
+  -- Subquery to compute daily counts
+  FROM (SELECT date_trunc('day', date_created) AS day,
+               count(*) AS count
+          FROM evanston311
+         GROUP BY day) AS daily_count
+ GROUP BY month
+ ORDER BY month;
