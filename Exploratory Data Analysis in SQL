@@ -791,3 +791,14 @@ SELECT *
 -- Subquery to select maximum gap from request_gaps
  WHERE gap = (SELECT max(gap) 
                 FROM request_gaps);
+
+-- Truncate the time to complete requests to the day
+SELECT date_trunc('day', date_completed - date_created) AS completion_time,
+-- Count requests with each truncated time
+       count(*) 
+  FROM evanston311
+-- Where category is rats
+ WHERE category = 'Rodents- Rats'
+-- Group and order by the variable of interest
+ GROUP BY completion_time
+ ORDER BY completion_time;
