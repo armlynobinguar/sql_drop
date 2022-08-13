@@ -434,3 +434,8 @@ SELECT category, count(*)
  --- order by most frequent values
  ORDER BY count DESC
  LIMIT 10;
+
+-- Concatenate house_num, a space, and street
+-- and trim spaces from the start of the result
+SELECT ltrim(concat(house_num, ' ', street)) AS address
+  FROM evanston311;
