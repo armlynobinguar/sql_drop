@@ -572,3 +572,26 @@ CREATE TEMP TABLE indicators AS
 -- Inspect the contents of the new temp table
 SELECT *
   FROM indicators;
+
+-- To clear table if it already exists
+DROP TABLE IF EXISTS indicators;
+
+-- Create the temp table
+CREATE TEMP TABLE indicators AS
+  SELECT id, 
+         CAST (description LIKE '%@%' AS integer) AS email,
+         CAST (description LIKE '%___-___-____%' AS integer) AS phone 
+    FROM evanston311;
+
+-- Select the column you'll group by
+SELECT priority, 
+       -- Compute the proportion of rows with each indicator
+       sum(email)/count(*)::numeric AS email_prop, 
+       sum(phone)/count(*)::numeric AS phone_prop 
+  -- Tables to select from
+  FROM evanston311
+       LEFT JOIN indicators
+       -- Joining condition
+       ON evanston311.id=indicators.id
+ -- What are you grouping by?
+ GROUP BY priority;
