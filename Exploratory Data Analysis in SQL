@@ -612,3 +612,7 @@ SELECT count(*)
   FROM evanston311
  WHERE date_created >= '2017-03-13'
    AND date_created < '2017-03-13'::date + 1;
+
+-- Subtract the min date_created from the max
+SELECT max(date_created) - min(date_created)
+  FROM evanston311;
