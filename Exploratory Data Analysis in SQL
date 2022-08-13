@@ -616,3 +616,7 @@ SELECT count(*)
 -- Subtract the min date_created from the max
 SELECT max(date_created) - min(date_created)
   FROM evanston311;
+
+-- How old is the most recent request?
+SELECT now() - max(date_created)
+  FROM evanston311;
