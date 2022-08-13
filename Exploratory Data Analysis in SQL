@@ -397,3 +397,10 @@ SELECT distinct street,
        trim(street, '0123456789 #/.') AS cleaned_street
   FROM evanston311
  ORDER BY street;
+ 
+ -- Count rows
+SELECT count(*)
+  FROM evanston311
+ -- Where description includes trash or garbage
+ WHERE description ILIKE '%trash%' 
+    OR description ILIKE '%garbage%';
