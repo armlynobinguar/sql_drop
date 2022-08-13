@@ -365,3 +365,8 @@ SELECT measure,
        round(profits_change::numeric, 2) AS profits_change,
        round(revenues_change::numeric, 2) AS revenues_change
   FROM correlations;
+
+-- Select the count of each level of priority
+SELECT priority, count(*) 
+  FROM evanston311
+ GROUP BY priority;
