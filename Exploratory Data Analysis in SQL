@@ -439,3 +439,11 @@ SELECT category, count(*)
 -- and trim spaces from the start of the result
 SELECT ltrim(concat(house_num, ' ', street)) AS address
   FROM evanston311;
+
+-- Select the first word of the street value
+SELECT split_part(street, ' ', 1) AS street_name, 
+       count(*)
+  FROM evanston311
+ GROUP BY street_name
+ ORDER BY count DESC
+ LIMIT 20;
