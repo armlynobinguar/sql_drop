@@ -655,3 +655,10 @@ SELECT date_part('hour', date_created) AS hour,
  -- Order results to select most common
  ORDER BY count DESC
  LIMIT 1;
+
+-- Count requests completed by hour
+SELECT date_part('hour', date_completed) AS hour,
+       count(*)
+  FROM evanston311
+ GROUP BY hour
+ ORDER BY hour;
