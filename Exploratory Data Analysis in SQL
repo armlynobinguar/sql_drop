@@ -411,3 +411,13 @@ SELECT category
  -- Use LIKE
  WHERE category LIKE '%Trash%'
     OR category LIKE '%Garbage%';
+
+-- Count rows
+SELECT count(*)
+  FROM evanston311 
+ -- description contains trash or garbage
+ WHERE (description ILIKE '%trash%'
+    OR description ILIKE '%garbage%') 
+ -- category does not contain Trash or Garbage
+   AND category NOT LIKE '%Trash%'
+   AND category NOT LIKE '%Garbage%';
