@@ -646,3 +646,12 @@ SELECT date_part('month', date_created) AS month,
    AND date_created < '2018-01-01'
  -- Group by what to get monthly counts?
  GROUP BY month;
+
+-- Get the hour and count requests
+SELECT date_part('hour', date_created) AS hour,
+       count(*)
+  FROM evanston311
+ GROUP BY hour
+ -- Order results to select most common
+ ORDER BY count DESC
+ LIMIT 1;
