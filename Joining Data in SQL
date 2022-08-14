@@ -167,3 +167,17 @@ FROM countries_plus AS c
     ON c.code = p.country_code
 -- Order the table    
 ORDER BY geosize_group;
+
+-- Select the city name (with alias), the country code,
+-- the country name (with alias), the region,
+-- and the city proper population
+SELECT c1.name AS city, code, c2.name AS country,
+       region, city_proper_pop
+-- From left table (with alias)
+FROM cities AS c1
+  -- Join to right table (with alias)
+  INNER JOIN countries AS c2
+    -- Match on country code?
+    ON c1.country_code = c2.code
+-- Order based on descending country code
+ORDER BY code DESC;
