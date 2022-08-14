@@ -30,4 +30,17 @@ SELECT c.code, name, region, year, fertility_rate
   -- Join with populations (as p)
   INNER JOIN populations AS p
     -- Match on country code
-    ON c.code = p.country_code;
+    ON c.code = p.country_code
+    
+    -- Select fields
+SELECT c.code, name, region, e.year, fertility_rate, unemployment_rate
+  -- From countries (alias as c)
+  FROM countries AS c
+  -- Join to populations (as p)
+  INNER JOIN populations AS p
+    -- Match on country code
+    ON c.code = p.country_code
+  -- Join to economies (as e)
+  INNER JOIN economies AS e
+    -- Match on country code and year
+    ___;
