@@ -370,3 +370,12 @@ FROM countries AS c1
     USING (code)
 -- Where region like Melanesia and Micronesia
 WHERE region LIKE 'M%esia';
+
+-- Select fields
+SELECT c.name AS city, l.name AS language
+-- From cities (alias as c)
+FROM cities AS c        
+  -- Join to languages (alias as l)
+  CROSS JOIN languages AS l
+-- Where c.name like Hyderabad
+WHERE c.name LIKE 'Hyder%';
