@@ -235,3 +235,11 @@ WHERE team_api_id IN
 	  (SELECT hometeam_id 
        FROM match
        WHERE home_goal >= 8);
+
+SELECT 
+	-- Select the country ID and match ID
+	country_id, 
+    id 
+FROM match
+-- Filter for matches with 10 or more goals in total
+WHERE (home_goal + away_goal) >= 10;
