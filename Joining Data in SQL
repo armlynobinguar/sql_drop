@@ -579,3 +579,10 @@ SELECT name
     SELECT p.country_code
     FROM populations AS p
 );
+
+-- Select average life_expectancy
+SELECT AVG(life_expectancy)
+  -- From populations
+  FROM populations
+-- Where year is 2015
+WHERE year = 2015;
