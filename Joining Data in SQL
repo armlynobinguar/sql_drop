@@ -529,3 +529,10 @@ WHERE code IN
    WHERE region = 'Middle East')
 -- Order by name
 ORDER BY name;
+
+-- Select statement
+SELECT COUNT(*)
+  -- From countries
+  FROM countries
+-- Where continent is Oceania
+WHERE continent = 'Oceania';
