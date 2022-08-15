@@ -672,3 +672,15 @@ SELECT name, continent, inflation_rate
     USING (code)
 -- Where year is 2015
 WHERE year = 2015;
+
+-- Select the maximum inflation rate as max_inf
+SELECT MAX(inflation_rate) AS max_inf
+  -- Subquery using FROM (alias as subquery)
+  FROM (
+      SELECT name, continent, inflation_rate
+      FROM countries
+      INNER JOIN economies
+      USING (code)
+      WHERE year = 2015) AS subquery
+-- Group by continent
+GROUP BY continent;
