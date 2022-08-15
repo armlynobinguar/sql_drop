@@ -199,3 +199,8 @@ FROM country AS c
 LEFT JOIN matches AS m
 ON c.id = m.country_id
 GROUP BY country;
+
+SELECT 
+-- Select the average of home + away goals, multiplied by 3
+	3 * AVG(home_goal + away_goal)
+FROM matches_2013_2014;
