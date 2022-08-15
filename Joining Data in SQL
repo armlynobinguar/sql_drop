@@ -646,3 +646,10 @@ SELECT countries.name AS country,
 FROM countries
 ORDER BY cities_num DESC, country
 LIMIT 9;
+
+-- Select fields (with aliases)
+SELECT code, COUNT(*) AS lang_num
+  -- From languages
+  FROM languages
+-- Group by code
+GROUP BY code;
