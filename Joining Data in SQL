@@ -916,3 +916,11 @@ FROM league AS l
 -- Join the CTE onto the league table
 LEFT JOIN match_list ON l.id = match_list.country_id
 GROUP BY l.name;
+
+SELECT 
+	m.id, 
+    t.team_long_name AS hometeam
+-- Left join team to match
+FROM match AS m
+LEFT JOIN team as t
+ON m.hometeam_id = team_api_id;
