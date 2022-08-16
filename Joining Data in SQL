@@ -972,3 +972,12 @@ SELECT
     m.home_goal,
     m.away_goal
 FROM match AS m;
+
+SELECT 
+	-- Select match id and team long name
+    m.id, 
+    t.team_long_name AS hometeam
+FROM match AS m
+-- Join team to match using team_api_id and hometeam_id
+LEFT JOIN team AS t 
+ON m.hometeam_id = t.team_api_id;
