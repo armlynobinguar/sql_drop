@@ -386,3 +386,11 @@ DECLARE @EndTimeParse DATETIME2(7) = SYSUTCDATETIME();
 -- calculating the difference from start time to end time
 SELECT
     DATEDIFF(MILLISECOND, @StartTimeParse, @EndTimeParse) AS ExecutionTimeParse;
+    
+    -- Fill in the functions and columns
+SELECT
+	COUNT(DISTINCT ir.IncidentTypeID) AS NumberOfIncidentTypes,
+	COUNT(DISTINCT ir.IncidentDate) AS NumberOfDaysWithIncidents
+FROM dbo.IncidentRollup ir
+WHERE
+ir.IncidentDate BETWEEN '2019-08-01' AND '2019-10-31';
