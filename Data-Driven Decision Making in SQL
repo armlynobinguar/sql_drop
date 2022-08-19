@@ -45,3 +45,10 @@ WHERE country = 'Germany'; -- Select all customers from Germany
 
 SELECT COUNT(DISTINCT country) -- Count the number of countries
 FROM customers;
+
+SELECT MIN(rating) AS min_rating, -- Calculate the minimum rating and use alias min_rating
+		MAX(rating) AS max_rating, -- Calculate the maximum rating and use alias max_rating
+		AVG(rating) AS avg_rating, -- Calculate the average rating and use alias avg_rating
+		COUNT(rating) AS number_ratings -- Count the number of ratings and use alias number_ratings
+FROM renting
+WHERE movie_id = 25; -- Select all records of the movie with ID 25
