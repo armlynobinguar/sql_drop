@@ -34,3 +34,7 @@ SELECT *
 FROM renting
 WHERE date_renting BETWEEN '2018-01-01' AND '2018-12-31' -- Renting in 2018
 AND rating IS NOT NULL; -- Rating exists
+
+SELECT COUNT(*) -- Count the total number of customers
+FROM customers
+WHERE date_of_birth BETWEEN '1980-01-01' AND '1989-12-31'; -- Select customers born between 1980-01-01 and 1989-12-31
