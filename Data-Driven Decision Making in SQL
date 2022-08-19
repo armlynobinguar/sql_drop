@@ -21,3 +21,7 @@ ORDER BY date_renting DESC; -- Order by recency in decreasing order
 SELECT *
 FROM movies
 WHERE genre <> 'Drama'; -- All genres except drama
+
+SELECT *
+FROM movies
+WHERE title IN ('Showtime', 'Love Actually', 'The Fighter'); -- Select all movies with the given titles
