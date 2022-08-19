@@ -1,2 +1,6 @@
 SELECT *      -- Select all
 FROM renting; -- From table renting
+
+SELECT movie_id,  -- Select all columns needed to compute the average rating per movie
+       rating
+FROM renting;
