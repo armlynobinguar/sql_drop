@@ -52,3 +52,8 @@ SELECT MIN(rating) AS min_rating, -- Calculate the minimum rating and use alias 
 		COUNT(rating) AS number_ratings -- Count the number of ratings and use alias number_ratings
 FROM renting
 WHERE movie_id = 25; -- Select all records of the movie with ID 25
+
+
+SELECT * -- Select all records of movie rentals since January 1st 2019
+FROM renting
+WHERE date_renting >= '2019-01-01'; 
