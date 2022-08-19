@@ -25,3 +25,7 @@ WHERE genre <> 'Drama'; -- All genres except drama
 SELECT *
 FROM movies
 WHERE title IN ('Showtime', 'Love Actually', 'The Fighter'); -- Select all movies with the given titles
+
+SELECT *
+FROM movies
+ORDER BY renting_price; -- Order the movies by increasing renting price
