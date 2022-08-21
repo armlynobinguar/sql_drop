@@ -128,3 +128,8 @@ FROM renting AS r
 LEFT JOIN customers AS c
 ON r.customer_id = c.customer_id
 WHERE c.country='Belgium';
+
+SELECT *
+FROM renting AS r
+LEFT JOIN movies AS m -- Choose the correct join statment
+ON r.movie_id = m.movie_id;
