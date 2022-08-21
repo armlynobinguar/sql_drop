@@ -185,3 +185,10 @@ FROM
     FROM actors
     WHERE nationality = 'USA') AS a -- Give the table the name a
 GROUP BY a.gender;
+
+SELECT *
+FROM renting AS r
+LEFT JOIN customers AS c
+ON c.customer_id = r.customer_id  -- Add customer information
+LEFT JOIN movies AS m
+ON m.movie_id = r.movie_id;   -- Add movie information
