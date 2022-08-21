@@ -82,3 +82,8 @@ SELECT country, -- For each country report the earliest date when an account was
 FROM customers
 GROUP BY country
 ORDER BY first_account;
+
+SELECT movie_id, 
+       AVG(rating) -- Calculate average rating per movie
+FROM renting
+GROUP BY movie_id;
