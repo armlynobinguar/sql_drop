@@ -273,3 +273,17 @@ GROUP BY a.name, c.gender
 HAVING AVG(r.rating) IS NOT NULL 
   AND COUNT(*) > 5 
 ORDER BY avg_rating DESC, number_views DESC;
+
+
+SELECT 
+	c.country,                      -- For each country report
+	COUNT(*) AS number_renting,   -- The number of movie rentals
+	AVG(r.rating) AS average_rating,  -- The average rating
+	SUM(m.renting_price) AS revenue  -- The revenue from movie rentals
+FROM renting AS r
+LEFT JOIN customers AS c
+ON c.customer_id = r.customer_id
+LEFT JOIN movies AS m
+ON m.movie_id = r.movie_id
+WHERE date_renting >= '2019-01-01'
+GROUP BY c.country;
