@@ -111,3 +111,8 @@ FROM renting
 GROUP BY customer_id
 HAVING COUNT(*) > 7 -- Select only customers with more than 7 movie rentals
 ORDER BY AVG(rating); -- Order by the average rating in ascending order
+
+SELECT * -- Join renting with customers
+FROM renting AS r
+LEFT JOIN customers AS c
+ON r.customer_id = c.customer_id;
