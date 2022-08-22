@@ -371,3 +371,8 @@ WHERE 8 <  -- Select all movies with an average rating higher than 8
 SELECT *
 FROM renting
 WHERE customer_id = 115;
+
+SELECT *
+FROM renting
+WHERE rating IS NOT NULL -- Exclude those with null ratings
+AND customer_id = 115;
