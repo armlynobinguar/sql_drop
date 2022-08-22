@@ -287,3 +287,11 @@ LEFT JOIN movies AS m
 ON m.movie_id = r.movie_id
 WHERE date_renting >= '2019-01-01'
 GROUP BY c.country;
+
+SELECT *
+FROM movies
+WHERE movie_id IN  -- Select movie IDs from the inner query
+	(SELECT movie_id
+	FROM renting
+	GROUP BY movie_id
+	HAVING COUNT(*) > 5)
