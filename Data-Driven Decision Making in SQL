@@ -352,3 +352,10 @@ WHERE 4 >  -- Select all customers with a minimum rating smaller than 4
 	(SELECT MIN(rating)
 	FROM renting AS r
 	WHERE r.customer_id = c.customer_id);
+	
+	SELECT *
+FROM movies AS m
+WHERE 5 < -- Select all movies with more than 5 ratings
+	(SELECT COUNT(rating)
+	FROM renting AS r
+	WHERE r.movie_id = m.movie_id);
