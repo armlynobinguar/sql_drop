@@ -390,3 +390,10 @@ WHERE EXISTS
 	FROM renting AS r
 	WHERE rating IS NOT NULL 
 	AND r.customer_id = c.customer_id);
+	
+	
+	SELECT *  -- Select the records of all actors who play in a Comedy
+FROM actsin AS ai
+LEFT JOIN movies AS m
+ON ai.movie_id = m.movie_id
+WHERE m.genre = 'Comedy';
