@@ -339,3 +339,8 @@ WHERE 5 >
 	(SELECT count(*)
 	FROM renting as r
 	WHERE r.customer_id=c.customer_id);
+
+-- Calculate the minimum rating of customer with ID 7
+SELECT MIN(rating)
+FROM renting
+WHERE customer_id = 7;
