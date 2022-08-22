@@ -307,3 +307,12 @@ WHERE customer_id IN -- Select all customers with more than 10 movie rentals
 	
 	SELECT AVG(rating) -- Calculate the total average rating
 FROM renting;
+
+
+SELECT movie_id,  -- Select movie IDs and calculate the average rating 
+       AVG(rating)
+FROM renting
+GROUP BY movie_id
+HAVING AVG(rating) >   -- Of movies with rating above average
+	(SELECT AVG(rating)
+	FROM renting);
