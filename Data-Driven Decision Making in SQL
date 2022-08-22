@@ -326,3 +326,8 @@ WHERE movie_id IN
      HAVING AVG(rating) > 
 		(SELECT AVG(rating)
 		 FROM renting));
+
+-- Count movie rentals of customer 45
+SELECT COUNT(*)
+FROM renting as r
+WHERE r.customer_id = 45;
