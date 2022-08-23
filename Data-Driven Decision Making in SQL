@@ -475,3 +475,10 @@ WHERE movie_id IN -- Select all movies of genre drama with average rating higher
     FROM renting
     GROUP BY movie_id
     HAVING AVG(rating)>9);
+    
+    SELECT gender,  -- Extract information of a pivot table of gender and country for the number of customers
+	   country,
+	   COUNT(*)
+FROM customers
+GROUP BY CUBE (gender, country)
+ORDER BY country;
