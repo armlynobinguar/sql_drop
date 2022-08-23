@@ -427,3 +427,9 @@ WHERE EXISTS
 	 WHERE m.genre = 'Comedy'
 	 AND ai.actor_id = a.actor_id)
 GROUP BY a.nationality;
+
+SELECT name, 
+       nationality, 
+       year_of_birth
+FROM actors
+WHERE year_of_birth > 1990; -- Born after 1990
