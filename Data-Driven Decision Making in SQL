@@ -457,3 +457,8 @@ SELECT name,
        year_of_birth
 FROM actors
 WHERE year_of_birth > 1990;
+
+SELECT movie_id -- Select the IDs of all movies with average rating higher than 9
+FROM renting
+GROUP BY movie_id
+HAVING AVG(rating) > 9;
