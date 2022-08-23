@@ -596,3 +596,12 @@ LEFT JOIN customers AS c
 ON r.customer_id = c.customer_id
 GROUP BY country, gender  -- Order and group by country and gender
 ORDER BY country, gender;
+
+SELECT 
+	c.country, 
+    c.gender,
+	AVG(r.rating)
+FROM renting AS r
+LEFT JOIN customers AS c
+ON r.customer_id = c.customer_id
+GROUP BY GROUPING SETS ((country, gender)); -- Group by country and gender with GROUPING SETS
