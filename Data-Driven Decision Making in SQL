@@ -578,3 +578,11 @@ SELECT
     COUNT(*) -- Count the number of actors
 FROM actors
 GROUP BY GROUPING SETS ((nationality), (gender), ()); -- Use the correct GROUPING SETS operation
+
+SELECT 
+	c.country, -- Select country, gender and rating
+	c.gender,
+	r.rating
+FROM renting AS r
+LEFT JOIN customers AS c -- Use the correct join
+ON r.customer_id = c.customer_id;
