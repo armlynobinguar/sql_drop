@@ -496,3 +496,11 @@ SELECT year_of_release,
 FROM movies
 GROUP BY CUBE (year_of_release, genre)
 ORDER BY year_of_release;
+
+-- Augment the records of movie rentals with information about movies and customers
+SELECT *
+FROM renting AS r
+LEFT JOIN movies AS m
+ON m.movie_id = r.movie_id
+LEFT JOIN customers AS c
+ON r.customer_id = c.customer_id;
