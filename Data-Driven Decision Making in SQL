@@ -664,3 +664,11 @@ WHERE r.movie_id IN (
 AND r.date_renting >= '2018-01-01'
 GROUP BY genre
 ORDER BY avg_rating DESC; -- Order the table by decreasing average rating
+
+-- Join the tables
+SELECT *
+FROM renting AS r
+LEFT JOIN actsin AS ai
+ON ai.movie_id = r.movie_id
+LEFT JOIN actors AS a
+ON ai.actor_id = a.actor_id;
