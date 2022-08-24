@@ -116,3 +116,13 @@ INNER JOIN Earthquakes AS e
 	ON n.Code2 = e.Country
 WHERE e.Magnitude >= 9
 ORDER BY e.Magnitude DESC;
+
+-- First query
+/*
+SELECT PlayerName, 
+    Team, 
+    Position,
+    (DRebound+ORebound)/CAST(GamesPlayed AS numeric) AS AvgRebounds
+FROM PlayerStats
+WHERE AvgRebounds >= 12;
+*/
