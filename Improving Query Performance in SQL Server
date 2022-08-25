@@ -249,3 +249,12 @@ UNION ALL -- Append queries
 SELECT Capital AS NearCityName,
        Code2 AS CountryCode  -- Country code column
 FROM Nations;
+
+SELECT UNStatisticalRegion,
+       CountryName 
+FROM Nations
+WHERE Code2 -- Country code for outer query
+         IN (SELECT Country -- Country code for sub-query
+             FROM Earthquakes
+             WHERE Depth >= 400) -- Depth filter
+ORDER BY UNStatisticalRegion;
