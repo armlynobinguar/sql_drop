@@ -349,3 +349,11 @@ WHERE NOT EXISTS -- Add the operator to compare queries
 	(SELECT 1
 	 FROM Cities AS c
 	 WHERE n.Code2 = c.CountryCode); -- Columns being compared
+
+SELECT WorldBankRegion,
+       CountryName,
+       Capital -- Capital city name column
+FROM Nations
+WHERE Capital NOT IN
+	(SELECT NearestPop -- City name column
+	 FROM Earthquakes);
