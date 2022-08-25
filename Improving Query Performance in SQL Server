@@ -172,3 +172,6 @@ WHERE Position = 'PF'
 GROUP BY Team
 -- Filter for total points greater than 3000
 HAVING SUM(TotalPoints) > 3000;
+
+SELECT *
+FROM Earthquakes;
