@@ -229,3 +229,13 @@ WHERE Magnitude >= 8
 	AND Country IS NOT NULL
 GROUP BY NearestPop, Country -- Group columns
 ORDER BY NumEarthquakes DESC;
+
+SELECT CityName AS NearCityName, -- City name column
+	   CountryCode
+FROM Cities
+
+UNION -- Append queries
+
+SELECT Capital AS NearCityName, -- Nation capital column
+       Code2 AS CountryCode
+FROM Nations;
