@@ -456,3 +456,5 @@ WHERE EXISTS -- Sub-query filter operator
           AND c.Pop2017 > 2000000);
 
 SET STATISTICS TIME OFF -- Turn the time command off
+
+SET STATISTICS IO ON -- Turn the IO command on
