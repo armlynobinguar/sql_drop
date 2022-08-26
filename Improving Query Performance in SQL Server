@@ -422,3 +422,6 @@ LEFT OUTER JOIN Orders o
 	ON c.CustomerID = o.CustomerID
 WHERE c.Country = 'France'
 	AND o.CustomerID IS NULL; -- Filter condition
+
+
+SET STATISTICS TIME ON -- Turn the time command on
