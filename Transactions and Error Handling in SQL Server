@@ -192,3 +192,6 @@ DECLARE @my_message NVARCHAR(500) =
 IF (@current_stock - @sold_bikes < 0)
 	-- Throw the error
 	THROW 50000, @my_message, 1;
+
+-- Pass the variables to the stored procedure
+EXEC sp_addmessage @msgnum = 50002, @severity = 16, @msgtext = 'There are not enough %s bikes. You only have %d in stock.', @lang = N'us_english';
