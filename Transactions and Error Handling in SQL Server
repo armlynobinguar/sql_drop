@@ -888,3 +888,8 @@ WHERE customer_id BETWEEN 1 AND 10;
 
 -- Commit the transaction
 COMMIT TRAN
+
+SELECT *
+	-- Avoid being blocked
+	FROM transactions WITH (NOLOCK)
+WHERE account_id = 1
