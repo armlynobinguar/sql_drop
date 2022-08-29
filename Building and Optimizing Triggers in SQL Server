@@ -91,3 +91,11 @@ WHERE Product IN ('Cloudberry', 'Guava', 'Nance', 'Yuzu');
 
 -- Verify the output of the history table
 SELECT * FROM RetiredProducts;
+
+-- Create a new trigger for canceled orders
+CREATE TRIGGER KeepCanceledOrders
+ON Orders
+AFTER DELETE
+AS 
+	INSERT INTO CanceledOrders
+	SELECT * FROM deleted;
