@@ -429,3 +429,12 @@ VALUES ('Fruit Mag', 'Pomelo', 1.12, 'USD', 200),
 
 -- Verify the results after adding the new rows
 SELECT * FROM SalesWithPrice;
+
+-- Create the trigger
+CREATE TRIGGER TrackRetiredProducts
+ON Products
+AFTER DELETE
+AS
+	INSERT INTO RetiredProducts (Product, Measure)
+	SELECT Product, Measure
+	FROM deleted;
