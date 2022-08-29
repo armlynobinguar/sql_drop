@@ -110,3 +110,10 @@ AS
 	SELECT i.Customer, d.Discount, i.Discount, GETDATE()
 	FROM inserted AS i
 	INNER JOIN deleted AS d ON i.Customer = d.Customer;
+
+-- Notify the Sales team of new orders
+CREATE TRIGGER NewOrderAlert
+ON Orders
+AFTER INSERT
+AS
+	EXECUTE SendEmailtoSales;
