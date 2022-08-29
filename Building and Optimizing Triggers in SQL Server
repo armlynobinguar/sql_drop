@@ -352,3 +352,8 @@ AS
 
 	RAISERROR ('Updates on "Orders" table are not permitted.
                 Place a new order to add new products.', 16, 1);
+
+-- Get the table ID
+SELECT object_id AS TableID
+FROM sys.objects
+WHERE name = 'Orders';
