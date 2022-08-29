@@ -333,3 +333,8 @@ WHERE is_disabled = 1;
 SELECT *
 FROM sys.server_triggers
 WHERE create_date = modify_date;
+
+-- Get the database triggers
+SELECT *
+FROM sys.triggers
+WHERE parent_class_desc = 'DATABASE';
