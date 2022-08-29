@@ -604,3 +604,7 @@ AS
 	-- Pause the trigger execution
 DISABLE TRIGGER PreventOrdersUpdate
 ON Orders;
+
+-- Resume the trigger execution
+ENABLE TRIGGER PreventOrdersUpdate
+ON Orders;
