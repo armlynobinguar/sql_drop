@@ -298,3 +298,7 @@ AS
 
 -- Remove the trigger
 DROP TRIGGER PreventNewDiscounts;
+
+-- Remove the database trigger
+DROP TRIGGER PreventTableDeletion
+ON DATABASE;
