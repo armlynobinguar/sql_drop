@@ -169,3 +169,13 @@ AS
 	INSERT INTO ServerLogonLog (LoginName, LoginDate, SessionID, SourceIPAddress)
 	SELECT ORIGINAL_LOGIN(), GETDATE(), @@SPID, client_net_address
 	FROM SYS.DM_EXEC_CONNECTIONS WHERE session_id = @@SPID;
+
+-- Get the column that contains the trigger name
+SELECT name AS TriggerName,
+	   parent_class_desc AS TriggerType,
+	   create_date AS CreateDate,
+	   modify_date AS LastModifiedDate,
+	   is_disabled AS Disabled,
+       -- Get the column that tells if it's an INSTEAD OF trigger
+	   is_instead_of_trigger AS InsteadOfTrigger
+FROM sys.triggers;
