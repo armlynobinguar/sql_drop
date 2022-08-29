@@ -454,3 +454,10 @@ AFTER DELETE
 AS 
 	INSERT INTO CanceledOrders
 	SELECT * FROM deleted;
+
+-- Notify the Sales team of new orders
+CREATE TRIGGER NewOrderAlert
+ON Orders
+AFTER INSERT
+AS
+	EXECUTE SendEmailtoSales;
