@@ -622,3 +622,11 @@ AS
 
 	RAISERROR ('Updates on "Orders" table are not permitted.
                 Place a new order to add new products.', 16, 1);
+		
+		-- Add a trigger to disable the removal of tables
+CREATE TRIGGER PreventTableDeletion
+ON DATABASE
+FOR DROP_TABLE
+AS
+	RAISERROR ('You are not allowed to remove tables from this database.', 16, 1);
+    ROLLBACK;
