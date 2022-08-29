@@ -133,3 +133,13 @@ INSTEAD OF INSERT
 AS
 	RAISERROR ('You are not allowed to add discounts for existing customers.
                 Contact the Sales Manager for more details.', 16, 1);
+
+-- Create the trigger to log table info
+CREATE TRIGGER TrackTableChanges
+ON DATABASE
+FOR CREATE_TABLE,
+	ALTER_TABLE,
+	DROP_TABLE
+AS
+	INSERT INTO TablesChangeLog (EventData, ChangedBy)
+    VALUES (EVENTDATA(), USER);
