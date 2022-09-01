@@ -414,3 +414,11 @@ skill_freq = map_reduce(job_postings, 4, mapper, reducer)
 values = [98, 63, 55, 80, 45, 51, 91, 64, 65, 48, 48, 92, 76, 99, 57, 42, 79, 61, 63, 49]
 min_value = map_reduce(values, 4, min, min)
 print(min_value)
+
+with open("english_words.txt") as f:
+    words = [word.strip() for word in f.readlines()]
+def map_max_length(words_chunk):
+    return max([len(word) for word in words_chunk]) 
+
+max_len = map_reduce(words, 4, map_max_length, max)
+print(max_len)
