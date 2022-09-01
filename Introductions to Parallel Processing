@@ -260,3 +260,15 @@ end = time.time()
 time_parallel = end - start
 
 print(time_normal / time_parallel)
+
+import math
+
+def make_chunks(df, num_chunks):
+    chunk_size = math.ceil(df.shape[0] / num_chunks)
+    return [df[i:i+chunk_size] for i in range(0, df.shape[0], chunk_size)]
+# Answer
+def make_chunks(data, num_chunks):
+    chunk_size = math.ceil(len(data) / num_chunks)
+    return [data[i:i+chunk_size] for i in range(0, len(data), chunk_size)]
+
+chunks = make_chunks([1, 2, 3, 4, 5, 6], 3)
