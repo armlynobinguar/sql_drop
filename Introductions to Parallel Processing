@@ -156,3 +156,8 @@ import pandas as pd
 job_postings = pd.read_csv("DataEngineer.csv")
 num_rows = job_postings.shape[0]
 num_cols = job_postings.shape[1]
+
+import pandas as pd
+job_postings = pd.read_csv("DataEngineer.csv")
+num_rows = job_postings.shape[0]
+num_cols = job_postings.shape[1]
