@@ -93,3 +93,29 @@ process.start()
 process.join()
 
 print(float_value.value)
+
+def sum_values(first, last, shared_value):
+    for i in range(first, last):
+        shared_value.value += i
+
+def sum_with_two_processes():
+    N = 10000
+
+    shared_value = multiprocessing.Value("i")
+    process1 = multiprocessing.Process(target=sum_values, args=(1, N // 2, shared_value))
+    process2 = multiprocessing.Process(target=sum_values, args=(N // 2, N, shared_value))
+
+    process1.start()
+    process2.start()
+
+    process1.join()
+    process2.join()
+    return shared_value.value
+
+# Add code below
+results = []
+for _ in range(10):
+    result = sum_with_two_processes()
+    results.append(result)
+
+print(results)
