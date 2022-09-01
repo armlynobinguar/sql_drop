@@ -338,3 +338,22 @@ values = [1, 4, 5, 2, 7, 21,     \
 # Write code here
 import functools
 max_value = functools.reduce(max, values)
+
+data = [1, 4, 5, 2, 7, 21,     \
+        31, 41, 3, 40, 5, 14,  \
+        9, 32, 12, 18, 1, 30,  \
+        6, 19, 23, 35, 12, 13, \
+        0, 12, 42, 41, 11, 9]
+
+num_processes = 5
+
+# Write code here
+# Step 1: split
+chunks = make_chunks(data, num_processes)
+
+# Step 2: map
+with Pool(num_processes) as pool:
+    chunk_results = pool.map(max, chunks)
+
+# Step 3: reduce
+overall_result = functools.reduce(max, chunk_results)
