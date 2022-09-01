@@ -328,3 +328,13 @@ chunks = make_chunks(values, 6)
 # Write code here
 with Pool(6) as pool:
     results = pool.map(max, chunks)
+
+values = [1, 4, 5, 2, 7, 21,     \
+          31, 41, 3, 40, 5, 14,  \
+          9, 32, 12, 18, 1, 30,  \
+          6, 19, 23, 35, 12, 13, \
+          0, 12, 42, 41, 11, 9]
+
+# Write code here
+import functools
+max_value = functools.reduce(max, values)
