@@ -14,3 +14,7 @@ for chunk in moma_iter:
     chunk.to_sql("exhibitions", conn, if_exists='append', index=False)
 results_df = pd.read_sql('PRAGMA table_info(exhibitions);', conn)
 print(results_df)
+
+q = 'select exhibitionid, count(*) as counts from exhibitions group by exhibitionid order by counts desc;'
+eid_counts = pd.read_sql(q, conn)
+print(eid_counts[:10])
