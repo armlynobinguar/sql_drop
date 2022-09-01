@@ -18,3 +18,8 @@ print(results_df)
 q = 'select exhibitionid, count(*) as counts from exhibitions group by exhibitionid order by counts desc;'
 eid_counts = pd.read_sql(q, conn)
 print(eid_counts[:10])
+
+q = 'select exhibitionid from exhibitions;'
+eid_df = pd.read_sql(q, conn)
+eid_pandas_counts = eid_df['ExhibitionID'].value_counts()
+print(eid_pandas_counts[:10])
