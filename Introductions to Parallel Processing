@@ -151,3 +151,8 @@ time_sum_values_improved = measure_runtime(sum_values_improved)
 
 print(time_sum_values)
 print(time_sum_values_improved)
+
+import pandas as pd
+job_postings = pd.read_csv("DataEngineer.csv")
+num_rows = job_postings.shape[0]
+num_cols = job_postings.shape[1]
