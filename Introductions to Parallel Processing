@@ -161,3 +161,10 @@ import pandas as pd
 job_postings = pd.read_csv("DataEngineer.csv")
 num_rows = job_postings.shape[0]
 num_cols = job_postings.shape[1]
+
+job_postings["Job Description"] = job_postings["Job Description"].str.lower()
+frequency = {}
+frequency["postgres"] = job_postings["Job Description"].str.count("postgres").sum()
+frequency["sql"] = job_postings["Job Description"].str.count("sql").sum()
+
+print(frequency)
