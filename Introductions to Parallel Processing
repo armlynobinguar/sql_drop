@@ -447,3 +447,25 @@ def reduce_contains(contains1, contains2):
 
 is_contained = map_reduce(words, 4, map_contains, reduce_contains)
 print(is_contained)
+
+with open("english_words.txt") as f:
+    words = [word.strip() for word in f.readlines()]
+def map_char_count(words_chunk):
+    char_freq = {}
+    for word in words_chunk:
+        for c in word:
+            if c not in char_freq:
+                char_freq[c] = 0
+            char_freq[c] += 1
+    return char_freq
+
+def reduce_char_count(freq1, freq2):
+    for c in freq2:
+        if c in freq1:
+            freq1[c] += freq2[c]
+        else:
+            freq1[c] = freq2[c]
+    return freq1
+
+char_freq = map_reduce(words, 4, map_char_count, reduce_char_count)
+print(char_freq)
