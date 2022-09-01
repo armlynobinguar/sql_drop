@@ -1,0 +1,14 @@
+import multiprocessing
+
+import time
+def wait():
+    time.sleep(0.5)
+    print("Done waiting")
+
+process = multiprocessing.Process(target=wait)
+
+# Add code here
+process.start()
+print("Finished")
+
+process.join()
