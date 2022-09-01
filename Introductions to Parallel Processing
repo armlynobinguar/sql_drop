@@ -193,3 +193,11 @@ start = time.time()
 count_skills(job_postings, skills)
 end = time.time()
 runtime = end - start
+
+import math
+def make_chunks(df, num_chunks):
+    num_rows = df.shape[0]
+    chunk_size = math.ceil(num_rows / num_chunks)
+    return [df[i:i+chunk_size] for i in range(0, num_rows, chunk_size)]
+
+skill_chunks = make_chunks(skills, 8)
