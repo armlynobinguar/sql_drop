@@ -301,3 +301,18 @@ values = [1, 4, 5, 2, 7, 21,     \
 
 # Write code here
 results = map_parallel(max, values, 5)
+
+values = [1, 4, 5, 2, 7, 21,     \
+          31, 41, 3, 40, 5, 14,  \
+          9, 32, 12, 18, 1, 30,  \
+          6, 19, 23, 35, 12, 13, \
+          0, 12, 42, 41, 11, 9]
+
+chunks = make_chunks(values, 6)
+
+# Write code here
+from multiprocessing import Pool
+pool = Pool(6)
+results = pool.map(max, chunks)
+pool.close()
+pool.join()
