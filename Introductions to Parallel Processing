@@ -24,3 +24,24 @@ process = multiprocessing.Process(target=wait)
 process.start()
 process.join()
 print("Finished")
+
+import time
+def wait():
+    time.sleep(0.5)
+    print("Done waiting")
+
+# Add code below
+start = time.time()
+
+p1 = multiprocessing.Process(target=wait)
+p2 = multiprocessing.Process(target=wait)
+
+p1.start()
+p2.start()
+
+p1.join()
+p2.join()
+
+end = time.time()
+
+elapsed = end - start
