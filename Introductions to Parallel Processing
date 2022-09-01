@@ -65,3 +65,19 @@ for process in processes:
 end = time.time()
 
 elapsed = end - start
+
+def sum3(x, y, z):
+    print(x + y + z)
+
+def list_average(values):
+    print(sum(values) / len(values))
+
+# Add code below
+sum3_process = multiprocessing.Process(target=sum3, args=[3, 2, 5])
+list_average_process = multiprocessing.Process(target=list_average, args=[[1, 2, 3, 4, 5]])
+
+sum3_process.start()
+list_average_process.start()
+
+sum3_process.join()
+list_average_process.join()
