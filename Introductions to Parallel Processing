@@ -81,3 +81,15 @@ list_average_process.start()
 
 sum3_process.join()
 list_average_process.join()
+
+def sum3(x, y, z):
+    print(x + y + z)
+def sum3(x, y, z, shared_value):
+    shared_value.value = x + y + z
+
+float_value = multiprocessing.Value("f")
+process = multiprocessing.Process(target=sum3, args=[5, 7, 4, float_value])
+process.start()
+process.join()
+
+print(float_value.value)
