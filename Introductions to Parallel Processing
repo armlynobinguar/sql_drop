@@ -223,3 +223,7 @@ with concurrent.futures.ProcessPoolExecutor() as executor:
 
 results = [future.result() for future in futures]
 print(results[0])
+
+merged_results = {}
+for result in results:
+    merged_results.update(result)
