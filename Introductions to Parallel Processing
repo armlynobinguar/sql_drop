@@ -119,3 +119,35 @@ for _ in range(10):
     results.append(result)
 
 print(results)
+
+def sum_values(first, last, shared_value):
+    for i in range(first, last):
+        with shared_value.get_lock():
+            shared_value.value += i
+
+def measure_runtime(function_to_measure):
+    N = 10000
+    shared_value = multiprocessing.Value("i")
+    process1 = multiprocessing.Process(target=function_to_measure, args=(1, N // 2, shared_value))
+    process2 = multiprocessing.Process(target=function_to_measure, args=(N // 2, N, shared_value))
+    start = time.time()
+    process1.start()
+    process2.start()
+    process1.join()
+    process2.join()
+    end = time.time()
+    return end - start
+    
+# Add code below
+def sum_values_improved(first, last, shared_value):
+    value_sum = 0
+    for i in range(first, last):
+        value_sum += i
+    with shared_value.get_lock():
+        shared_value.value += value_sum
+
+time_sum_values = measure_runtime(sum_values)
+time_sum_values_improved = measure_runtime(sum_values_improved)
+
+print(time_sum_values)
+print(time_sum_values_improved)
