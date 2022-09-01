@@ -469,3 +469,14 @@ def reduce_char_count(freq1, freq2):
 
 char_freq = map_reduce(words, 4, map_char_count, reduce_char_count)
 print(char_freq)
+
+with open("english_words.txt") as f:
+    words = [word.strip() for word in f.readlines()]
+def map_average(words_chunk):
+    return sum([len(word) for word in words_chunk]) / len(words)
+
+def reduce_average(res1, res2):
+    return res1 + res2
+    
+average_word_len = map_reduce(words, 4, map_average, reduce_average)
+print(average_word_len)
