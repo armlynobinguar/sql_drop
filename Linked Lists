@@ -531,3 +531,8 @@ print(queue.get_front())
 import pandas as pd
 processes = pd.read_csv("processes.csv", index_col="Pid")
 print(processes.shape)
+
+cur_time = 0
+num_processes_done = 0
+wait_queue = Queue()
+cur_pid = None
