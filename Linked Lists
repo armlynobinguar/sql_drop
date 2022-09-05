@@ -527,3 +527,7 @@ for i in [1, 2, 3]:
     queue.enqueue(i)
 front = queue.dequeue()
 print(queue.get_front())
+
+import pandas as pd
+processes = pd.read_csv("processes.csv", index_col="Pid")
+print(processes.shape)
