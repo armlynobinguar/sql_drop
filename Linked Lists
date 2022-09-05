@@ -1,0 +1,16 @@
+class Book:
+    
+    def __init__(self, name, num_pages):
+        self.name = name
+        self.num_pages = num_pages
+    
+book = Book("Lord of the Flies", 228)
+
+class Node:
+    
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+        
+node = Node(42)
