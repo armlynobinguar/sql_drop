@@ -443,3 +443,9 @@ print(lst)
 
 lst.append(2)
 print(lst)
+
+class Queue(LinkedList):
+    pass
+
+queue = Queue()
+print(queue.length)
