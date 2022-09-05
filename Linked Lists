@@ -492,3 +492,38 @@ for i in [1, 2, 3]:
     queue.enqueue(i)
     
 print(queue.get_front())
+
+class Queue(LinkedList):
+    
+    def enqueue(self, data):
+        self.prepend(data)
+        
+    def get_front(self):
+        return self.tail.data
+    
+    # Add dequeue() method here
+# Answer
+class Queue(LinkedList):
+    
+    def enqueue(self, data):
+        self.prepend(data)
+        
+    def get_front(self):
+        return self.tail.data
+    
+    # Add dequeue() method here
+    def dequeue(self):
+        ret = self.tail.data
+        if self.length == 1:
+            self.tail = self.head = None
+        else:
+            self.tail = self.tail.prev
+            self.tail.next = None
+        self.length -= 1
+        return ret
+
+queue = Queue()
+for i in [1, 2, 3]:
+    queue.enqueue(i)
+front = queue.dequeue()
+print(queue.get_front())
