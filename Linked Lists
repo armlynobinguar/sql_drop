@@ -455,3 +455,18 @@ class Queue(LinkedList):
 
 queue = Queue()
 print(queue.length)
+
+class Queue(LinkedList):
+    pass
+# Answer
+
+class Queue(LinkedList):
+    
+    def enqueue(self, data):
+        self.prepend(data)
+
+queue = Queue()
+for i in [1, 2, 3]:
+    queue.enqueue(i)
+    
+print(queue)
