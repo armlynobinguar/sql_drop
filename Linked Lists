@@ -470,3 +470,25 @@ for i in [1, 2, 3]:
     queue.enqueue(i)
     
 print(queue)
+
+class Queue(LinkedList):
+    
+    def enqueue(self, data):
+        self.prepend(data)
+        
+    # Add get_front() method here
+# Answer
+class Queue(LinkedList):
+    
+    def enqueue(self, data):
+        self.prepend(data)
+        
+    # Add get_front() method here
+    def get_front(self):
+        return self.tail.data
+
+queue = Queue()
+for i in [1, 2, 3]:
+    queue.enqueue(i)
+    
+print(queue.get_front())
