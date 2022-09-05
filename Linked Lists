@@ -449,3 +449,9 @@ class Queue(LinkedList):
 
 queue = Queue()
 print(queue.length)
+
+class Queue(LinkedList):
+    pass
+
+queue = Queue()
+print(queue.length)
