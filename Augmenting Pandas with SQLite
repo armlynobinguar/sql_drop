@@ -83,3 +83,26 @@ for i in [1, 2, 3]:
     stack.push(i)
 
 print(stack)
+
+
+class Stack(LinkedList):
+    
+    def push(self, data):
+        self.append(data)
+
+    # Add peek() method here
+# Answer
+class Stack(LinkedList):
+    
+    def push(self, data):
+        self.append(data)
+
+    # Add peek() method here
+    def peek(self):
+        return self.tail.data
+        
+stack = Stack()
+for i in [1, 2, 3]:
+    stack.push(i)
+    
+print(stack.peek())
