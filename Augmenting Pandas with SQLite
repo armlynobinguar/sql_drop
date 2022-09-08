@@ -54,3 +54,5 @@ print(processes.head())
 
 processes["Wait"] = processes["Start"] - processes["Arrival"]
 average_wait_time = processes["Wait"].mean()
+processes["Turnaround"] = processes["End"] - processes["Arrival"]
+average_turnaround_time = processes["Turnaround"].mean()
