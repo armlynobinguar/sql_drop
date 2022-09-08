@@ -164,3 +164,8 @@ for i in [1, 2, 3]:
     stack.push(i)
 top = stack.pop()
 print(stack.peek())
+
+
+import pandas as pd
+processes = pd.read_csv("processes.csv", index_col="Pid")
+print(processes.shape)
