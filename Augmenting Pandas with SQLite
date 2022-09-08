@@ -202,3 +202,8 @@ print(processes.head())
 
 processes["Wait"] = processes["Start"] - processes["Arrival"]
 average_wait_time = processes["Wait"].mean()
+
+fcfs_max_wait = processes["FCFS Wait"].max()
+lcfs_max_wait = processes["Wait"].max()
+
+print(fcfs_max_wait, lcfs_max_wait)
