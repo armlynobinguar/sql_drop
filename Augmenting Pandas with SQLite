@@ -68,3 +68,18 @@ class Stack(LinkedList):
 
 stack = Stack()
 print(stack.length)
+
+class Stack(LinkedList):
+    pass
+# Answer
+
+class Stack(LinkedList):
+    
+    def push(self, data):
+        self.append(data)
+
+stack = Stack()
+for i in [1, 2, 3]:
+    stack.push(i)
+
+print(stack)
