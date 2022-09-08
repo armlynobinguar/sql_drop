@@ -174,3 +174,28 @@ cur_time = 0
 num_processes_done = 0
 wait_stack = Stack()
 cur_pid = None
+
+cur_time = 0
+num_processes_done = 0
+wait_stack = Stack()
+cur_pid = None
+
+# Copy and paste template code here
+while num_processes_done < processes.shape[0]:
+    # Step 1 goes here
+    if cur_pid is not None:
+        if processes.loc[cur_pid, "Start"] + processes.loc[cur_pid, "Duration"] == cur_time:
+            processes.loc[cur_pid, "End"] = cur_time
+            cur_pid = None
+            num_processes_done += 1
+    # Step 2 goes here
+    ready_processes = processes[processes["Arrival"] == cur_time]
+    for pid, _ in ready_processes.iterrows():
+        wait_stack.push(pid)
+    # Step 3 goes here
+    if cur_pid is None and len(wait_stack) > 0:
+        cur_pid = wait_stack.pop()
+        processes.loc[cur_pid, "Start"] = cur_time 
+    cur_time += 1
+    
+print(processes.head())
