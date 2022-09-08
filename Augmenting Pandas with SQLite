@@ -199,3 +199,6 @@ while num_processes_done < processes.shape[0]:
     cur_time += 1
     
 print(processes.head())
+
+processes["Wait"] = processes["Start"] - processes["Arrival"]
+average_wait_time = processes["Wait"].mean()
