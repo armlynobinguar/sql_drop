@@ -169,3 +169,8 @@ print(stack.peek())
 import pandas as pd
 processes = pd.read_csv("processes.csv", index_col="Pid")
 print(processes.shape)
+
+cur_time = 0
+num_processes_done = 0
+wait_stack = Stack()
+cur_pid = None
