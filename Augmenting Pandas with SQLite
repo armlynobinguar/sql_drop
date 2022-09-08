@@ -128,3 +128,39 @@ for i in [1, 2, 3]:
     stack.push(i)
     
 print(stack.peek())
+
+
+class Stack(LinkedList):
+    
+    def push(self, data):
+        self.append(data)
+
+    def peek(self):
+        return self.tail.data
+
+    # Add pop() method here
+# Answer
+class Stack(LinkedList):
+    
+    def push(self, data):
+        self.append(data)
+
+    def peek(self):
+        return self.tail.data
+
+    # Add pop() method here
+    def pop(self):
+        ret = self.tail.data
+        if self.length == 1:
+            self.tail = self.head = None
+        else:
+            self.tail = self.tail.prev
+            self.tail.next = None
+        self.length -= 1
+        return ret
+
+stack = Stack()
+for i in [1, 2, 3]:
+    stack.push(i)
+top = stack.pop()
+print(stack.peek())
