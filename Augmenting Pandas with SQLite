@@ -207,3 +207,6 @@ fcfs_max_wait = processes["FCFS Wait"].max()
 lcfs_max_wait = processes["Wait"].max()
 
 print(fcfs_max_wait, lcfs_max_wait)
+
+processes["Turnaround"] = processes["End"] - processes["Arrival"]
+average_turnaround_time = processes["Turnaround"].mean()
