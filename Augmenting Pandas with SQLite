@@ -62,3 +62,9 @@ class Stack(LinkedList):
 
 stack = Stack()
 print(stack.length)
+
+class Stack(LinkedList):
+    pass
+
+stack = Stack()
+print(stack.length)
