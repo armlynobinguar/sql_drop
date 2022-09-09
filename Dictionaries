@@ -5,3 +5,12 @@ class Entry:
         self.value = value
         
 my_entry = Entry(12345, "my value")
+
+class Dictionary:
+    
+    def __init__(self, num_buckets):
+        self.num_buckets = num_buckets
+        self.buckets = [None for _ in range(num_buckets)]
+        self.length = 0
+
+my_dict = Dictionary(5)
