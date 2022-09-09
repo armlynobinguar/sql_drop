@@ -60,3 +60,42 @@ class Dictionary:
 
 my_dict = Dictionary(5)
 index = my_dict._get_index("data engineering")
+
+class Dictionary:
+    
+    def __init__(self, num_buckets):
+        self.num_buckets = num_buckets
+        self.buckets = [LinkedList() for _ in range(num_buckets)]
+        self.length = 0
+        
+    def _get_index(self, key):
+        hashcode = hash(key)
+        return hashcode % self.num_buckets
+        
+    # Add put() method here
+# Answer
+class Dictionary:
+    
+    def __init__(self, num_buckets):
+        self.num_buckets = num_buckets
+        self.buckets = [LinkedList() for _ in range(num_buckets)]
+        self.length = 0
+        
+    def _get_index(self, key):
+        hashcode = hash(key)
+        return hashcode % self.num_buckets
+        
+    # Add put() method here
+    def put(self, key, value):
+        index = self._get_index(key)
+        found_key = False
+        for entry in self.buckets[index]:
+            if entry.key == key:
+                entry.value = value
+                found_key = True
+        if not found_key:
+            self.buckets[index].append(Entry(key, value))
+            self.length += 1
+
+my_dict = Dictionary(5)
+my_dict.put("my key", 1)
