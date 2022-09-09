@@ -14,3 +14,24 @@ class Dictionary:
         self.length = 0
 
 my_dict = Dictionary(5)
+
+# Add import here
+
+class Dictionary:
+    
+    def __init__(self, num_buckets):
+        self.num_buckets = num_buckets
+        # Modify the line below
+        self.buckets = [None for _ in range(num_buckets)]
+        self.length = 0
+# Answer
+
+class Dictionary:
+    
+    def __init__(self, num_buckets):
+        self.num_buckets = num_buckets
+        # Modify the line below
+        self.buckets = [LinkedList() for _ in range(num_buckets)]
+        self.length = 0
+
+my_dict = Dictionary(5)
