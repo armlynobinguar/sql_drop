@@ -318,3 +318,20 @@ for key in keys:
     times.append(end - start)
     
 plot_times(times)
+
+import matplotlib.pyplot as plt
+
+def plot_buckets_sizes(dictionary):
+    plt.bar(range(100), [len(dictionary.buckets[i]) for i in range(100)])
+    plt.show()
+    
+import pandas as pd
+employees = pd.read_csv("employees.csv", index_col="Id")
+
+# Add code here
+dictionary = Dictionary(100)
+
+for identifier, data in employees.iterrows():
+    dictionary[identifier] = data
+
+plot_buckets_sizes(dictionary)
