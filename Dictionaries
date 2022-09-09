@@ -35,3 +35,28 @@ class Dictionary:
         self.length = 0
 
 my_dict = Dictionary(5)
+
+class Dictionary:
+    
+    def __init__(self, num_buckets):
+        self.num_buckets = num_buckets
+        self.buckets = [LinkedList() for _ in range(num_buckets)]
+        self.length = 0
+        
+    # Add _get_index() method here
+# Answer
+
+class Dictionary:
+    
+    def __init__(self, num_buckets):
+        self.num_buckets = num_buckets
+        self.buckets = [LinkedList() for _ in range(num_buckets)]
+        self.length = 0
+        
+    # Add _get_index() method here
+    def _get_index(self, key):
+        hashcode = hash(key)
+        return hashcode % self.num_buckets
+
+my_dict = Dictionary(5)
+index = my_dict._get_index("data engineering")
