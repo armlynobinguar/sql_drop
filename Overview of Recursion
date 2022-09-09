@@ -17,3 +17,28 @@ def list_len(lst):
     return 1 + list_len(lst[1:])
 
 list_len(fruits)
+
+def solve_hanoi(num_disks, first_peg, middle_peg, last_peg):
+    if num_disks == 1:
+        # Base case
+        print("Move the top disk from peg {} to peg {}.".format(first_peg, last_peg))
+    else:
+        # General Case
+        # Instruction 1: Add code to solve the first subproblem
+        
+        # Second subproblem: Move disk num_disks from first_peg to last_peg
+        solve_hanoi(1, first_peg, middle_peg, last_peg)
+        
+        # Instruction 2: Add code to solve the third subproblem
+# Answer
+def solve_hanoi(num_disks, first_peg, middle_peg, last_peg):
+    if num_disks == 1:
+        # Base case
+        print("Move the top disk from peg {} to peg {}.".format(first_peg, last_peg))
+    else:
+        # General Case
+        solve_hanoi(num_disks - 1, first_peg, last_peg, middle_peg)
+        solve_hanoi(1, first_peg, middle_peg, last_peg)
+        solve_hanoi(num_disks - 1, middle_peg, first_peg, last_peg)
+
+solve_hanoi(3, 'A', 'B', 'C')
