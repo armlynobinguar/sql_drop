@@ -295,3 +295,26 @@ my_dict = Dictionary(5)
 my_dict["my key"] = 2
 print(my_dict["my key"])
 print(len(my_dict))
+
+def plot_times(times):
+    plt.plot(times)
+    plt.show()
+
+import time
+import random
+random.seed(0)
+
+times = []
+number_of_entries = 1000
+keys = range(number_of_entries)
+
+d = dict()
+
+# Add code here
+for key in keys:
+    start = time.time()
+    d[key] = key
+    end = time.time()
+    times.append(end - start)
+    
+plot_times(times)
