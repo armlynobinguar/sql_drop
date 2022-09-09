@@ -1,0 +1,7 @@
+class Entry:
+
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
+        
+my_entry = Entry(12345, "my value")
