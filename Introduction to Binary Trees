@@ -8,3 +8,23 @@ class Node:
         self.value = value
         self.left_child = None
         self.right_child = None
+
+# Create the nodes
+node_5 = Node(5)
+node_3 = Node(3)
+node_9 = Node(9)
+node_1 = Node(1)
+node_8 = Node(8)
+node_6 = Node(6)
+node_10 = Node(10)
+
+# Create children references
+node_5.left_child = node_3
+node_5.right_child = node_9
+
+node_3.left_child = node_1
+
+node_9.left_child = node_8
+node_9.right_child = node_10
+
+node_8.left_child = node_6
