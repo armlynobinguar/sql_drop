@@ -221,3 +221,11 @@ class BST:
 bst = BST()
 for value in [5, 3, 9, 1, 8, 10, 6]:
     bst.add(value)
+
+from bst import Node, BST
+class AVLNode(Node):
+    
+    def __init__(self, value):
+        super().__init__(value)
+        self.height = 1
+        self.imbalance = 0
