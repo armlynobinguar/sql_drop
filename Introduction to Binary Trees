@@ -33,3 +33,45 @@ class BST:
     
     def __init__(self):
         self.root = None
+
+class BST:
+    
+    def __init__(self):
+        self.root = None
+        
+    def add(self, value):
+        if self.root is None:
+            # The root does exist yet, create it
+            self.root = Node(value)
+        else:
+            # Find the right place and insert new value
+            self.add_recursive(self.root, value)
+            
+    # Define and implement the add_recursive() method here
+# Answer
+class BST:
+    
+    def __init__(self):
+        self.root = None
+        
+    def add(self, value):
+        if self.root is None:
+            # The root does exist yet, create it
+            self.root = Node(value)
+        else:
+            # Find the right place and insert new value
+            self.add_recursive(self.root, value)
+            
+    def add_recursive(self, current_node, value):
+        if value <= current_node.value:
+            # Go to the left
+            if current_node.left_child is None:
+                current_node.left_child = Node(value)
+            else:
+                self.add_recursive(current_node.left_child, value)
+        else:
+            # Go to the right
+            if current_node.right_child is None:
+                current_node.right_child = Node(value)
+            else:
+                self.add_recursive(current_node.right_child, value)
