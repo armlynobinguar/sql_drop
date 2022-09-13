@@ -217,3 +217,7 @@ class BST:
 
     def contains(self, value):
         return self._contains(self.root, value)
+
+bst = BST()
+for value in [5, 3, 9, 1, 8, 10, 6]:
+    bst.add(value)
