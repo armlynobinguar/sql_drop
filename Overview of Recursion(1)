@@ -5,3 +5,15 @@ def list_len(lst):
     return 1 + list_len(lst[1:])
 
 num_fruits = list_len(fruits)
+
+fruits = ["apple", "orange", "pear", "fig", "passionfruit"]
+
+def list_len(lst):
+    if not lst:
+        return 0
+    return 1 + list_len(lst[1:])
+# Answer
+def list_len(lst):
+    return 1 + list_len(lst[1:])
+
+list_len(fruits)
