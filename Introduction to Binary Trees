@@ -1,0 +1,3 @@
+root = 5
+leaves = [1, 6, 10]
+internal = [3, 9, 8]
