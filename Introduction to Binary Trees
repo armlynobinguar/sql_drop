@@ -28,3 +28,8 @@ node_9.left_child = node_8
 node_9.right_child = node_10
 
 node_8.left_child = node_6
+
+class BST:
+    
+    def __init__(self):
+        self.root = None
