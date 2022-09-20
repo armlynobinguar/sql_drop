@@ -58,3 +58,9 @@ p_value = t.cdf(t_stat, df=degrees_of_freedom)
 
 # Print the p_value
 print(p_value)
+
+# Calculate the differences from 2012 to 2016
+sample_dem_data['diff'] = sample_dem_data['dem_percent_12'] - sample_dem_data['dem_percent_16']
+
+# Print sample_dem_data
+print(sample_dem_data)
