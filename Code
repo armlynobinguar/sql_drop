@@ -1,0 +1,2 @@
+# Print the late_shipments dataset
+print(late_shipments)
