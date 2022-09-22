@@ -730,3 +730,10 @@ ORDER BY CASE WHEN DATENAME(WEEKDAY, PickupDate) = 'Monday' THEN 1
          dbo.GetShiftNumber(DATEPART(hour, PickupDate)),
          SUM(DATEDIFF(SECOND, PickupDate, DropOffDate))/60 DESC
 END;
+
+-- Create @Borough
+DECLARE @Borough as nvarchar(30) = 'Manhattan'
+-- Execute the SP
+EXEC dbo.cuspPickupZoneShiftStats
+    -- Pass @Borough
+	@Borough = @Borough;
