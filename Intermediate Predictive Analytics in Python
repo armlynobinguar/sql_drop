@@ -180,3 +180,13 @@ pig_table = create_pig_table(basetable, "target", "donations_2017_min_2016_disc"
 
 # Plot the predictor insight graph
 plot_pig(pig_table, "donations_2017_min_2016_disc")
+
+# Create the dummy variable
+dummies_gender = pd.get_dummies(basetable["gender"], drop_first=True)
+
+# Add the dummy variable to the basetable
+basetable = pd.concat([basetable, dummies_gender], axis=1)
+
+# Delete the original variable from the basetable
+del basetable["gender"]
+print(basetable.head())
