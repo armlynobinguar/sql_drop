@@ -602,3 +602,35 @@ ORDER BY CASE WHEN DATENAME(WEEKDAY, PickupDate) = 'Monday' THEN 1
 		 SUM(DATEDIFF(SECOND, PickupDate, DropOffDate))/60
 DESC
 END;
+
+CREATE OR ALTER PROCEDURE dbo.cuspBoroughRideStats
+AS
+BEGIN
+SELECT
+    -- Calculate the pickup weekday
+	___(weekday, PickupDate) AS 'Weekday',
+    -- Select the Borough
+	Zone.Borough AS 'PickupBorough',
+    -- Display AvgFarePerKM as German currency
+	___(AVG(dbo.___(TotalAmount, .88)/dbo.___(TripDistance)), '_', 'de-de') AS '___',
+    -- Display RideCount in the German format
+	___(COUNT(ID), '_', 'de-de') AS '___',
+    -- Display TotalRideMin in the German format
+	___(SUM(DATEDIFF(SECOND, PickupDate, DropOffDate))/60, '_', 'de-de') AS '___'
+FROM YellowTripData
+INNER JOIN TaxiZoneLookup AS Zone 
+ON PULocationID = Zone.LocationID
+-- Only include records where TripDistance is greater than 0
+___ ___ > ___
+-- Group by pickup weekday and Borough
+GROUP BY DATENAME(WEEKDAY, PickupDate), Zone.Borough
+ORDER BY CASE WHEN DATENAME(WEEKDAY, PickupDate) = 'Monday' THEN 1
+	     	  WHEN DATENAME(WEEKDAY, PickupDate) = 'Tuesday' THEN 2
+              WHEN DATENAME(WEEKDAY, PickupDate) = 'Wednesday' THEN 3
+              WHEN DATENAME(WEEKDAY, PickupDate) = 'Thursday' THEN 4
+              WHEN DATENAME(WEEKDAY, PickupDate) = 'Friday' THEN 5
+              WHEN DATENAME(WEEKDAY, PickupDate) = 'Saturday' THEN 6
+              WHEN DATENAME(WEEKDAY, PickupDate) = 'Sunday' THEN 7 END,  
+		 SUM(DATEDIFF(SECOND, PickupDate, DropOffDate))/60
+DESC
+END;
