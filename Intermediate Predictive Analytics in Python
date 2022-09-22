@@ -89,3 +89,14 @@ basetable.groupby("segment").size()
 
 # Count the number of donors with no segment assigned
 print(basetable["segment"].isna().sum())
+
+
+# Reference date
+reference_date = datetime.date(2017, 1, 1)
+
+# Select living place reference date
+living_places_reference_date = living_places[(living_places["start_date"] <= reference_date) & 
+                                             (living_places["end_date"] > reference_date)]
+
+# Add living place to the basetable
+basetable = pd.merge(basetable, living_places_reference_date[["donor_ID", "living_place"]], on="donor_ID")
