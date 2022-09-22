@@ -37,3 +37,13 @@ donors_exclude = set(gifts_exclude["id"])
 # Population
 population = donors_include.difference(donors_exclude)
 print(len(population))
+
+# Create a dataframe donors_population
+donors_population = donors[(donors["address"] == 1) & (donors["letter_allowed"] == 1)]
+
+# Create a list of donor IDs
+population_list = list(donors_population["donor_id"])
+
+# Select unique donors in population_list
+population = set(population_list)
+print(len(population))
