@@ -290,3 +290,16 @@ basetable["france_age"] = basetable["country_France"] * basetable["age"]
 
 # Calculate AUC using age, country_Spain and interactions
 print(auc(["age", "country_Spain", "spain_age", "france_age"], basetable))
+
+
+# Calculate the mean amount donated per month 
+mean_per_month = gifts.groupby("month")["amount"].mean().reset_index()
+print(mean_per_month)
+
+# Calculate the number of donations per month 
+number_per_month = gifts.groupby("month").size().reset_index()
+print(number_per_month)
+
+# Calculate the median amount donated per month 
+median_per_month = gifts.groupby("month")["amount"].median().reset_index()
+print(median_per_month)
