@@ -217,3 +217,14 @@ number_na = sum(basetable["no_donations"] == 1)
 
 # Calculate percentage of missing values
 print(round(number_na / len(basetable), 2))
+
+# Calculate the median of age
+median_age = basetable["age"].median()
+print(median_age)
+
+# Replace missing values by the median
+basetable["age"] = basetable["age"].fillna(median_age)
+
+# Calculate the median of age after replacement
+median_age = basetable["age"].median()
+print(median_age)
