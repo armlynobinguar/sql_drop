@@ -228,3 +228,9 @@ basetable["age"] = basetable["age"].fillna(median_age)
 # Calculate the median of age after replacement
 median_age = basetable["age"].median()
 print(median_age)
+
+# Missing values replacement
+replacement = 0
+
+# Replace missing values by the appropriate value
+basetable["total_donations"] = basetable["total_donations"].fillna(replacement)
