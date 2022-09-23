@@ -265,3 +265,12 @@ upper_limit = mean_age + std_age*3
 basetable["age_mod"] = (pd.Series([min(max(a, lower_limit), upper_limit) 
                              for a in basetable["age"]]))
 print(basetable["age_mod"].max())
+
+# Add the log transformation of the variable "donations"
+basetable["donations_log"] = np.log(basetable["donations"])
+
+# Add the square root transformation of the variable "donations"
+basetable["donations_sqrt"] = np.sqrt(basetable["donations"])
+
+# Compare the transformations
+print(basetable)
