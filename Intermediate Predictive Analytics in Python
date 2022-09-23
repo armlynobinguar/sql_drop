@@ -319,3 +319,7 @@ print(auc)
 predictions = logreg.predict_proba(test_december[["age", "max_amount"]])[:,1]
 auc = roc_auc_score(test_december["target"], predictions)
 print(auc)
+
+# Sum of donations for each donor
+gifts_summed_january_2017 = gifts_january_2017.groupby("donor_id")["amount"].sum().reset_index()
+gifts_summed_january_2018 = gifts_january_2018.groupby("donor_id")["amount"].sum().reset_index()
