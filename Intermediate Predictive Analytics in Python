@@ -303,3 +303,8 @@ print(number_per_month)
 # Calculate the median amount donated per month 
 median_per_month = gifts.groupby("month")["amount"].median().reset_index()
 print(median_per_month)
+
+# AUC of model in July:
+predictions = logreg.predict_proba(test_july[["age", "max_amount"]])[:,1]
+auc = roc_auc_score(test_july["target"], predictions)
+print(auc)
