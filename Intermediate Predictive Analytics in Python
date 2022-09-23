@@ -313,3 +313,9 @@ print(auc)
 predictions = logreg.predict_proba(test_september[["age", "max_amount"]])[:,1]
 auc = roc_auc_score(test_september["target"], predictions)
 print(auc)
+
+
+# AUC of model in December:
+predictions = logreg.predict_proba(test_december[["age", "max_amount"]])[:,1]
+auc = roc_auc_score(test_december["target"], predictions)
+print(auc)
