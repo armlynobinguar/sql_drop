@@ -234,3 +234,18 @@ replacement = 0
 
 # Replace missing values by the appropriate value
 basetable["total_donations"] = basetable["total_donations"].fillna(replacement)
+
+from scipy.stats.mstats import winsorize
+
+# Check minimum sum of donations
+print(basetable["sum_donations"].min())
+print(basetable["sum_donations"].max())
+
+# Fill out the lower limit
+lower_limit = 0.0
+
+# Winsorize the variable sum_donations
+basetable["sum_donations_winsorized"] = winsorize(basetable["sum_donations"], limits=[lower_limit, 0.05])
+
+# Check maximum sum of donations after winsorization
+print(basetable["sum_donations_winsorized"].max())
