@@ -323,3 +323,11 @@ print(auc)
 # Sum of donations for each donor
 gifts_summed_january_2017 = gifts_january_2017.groupby("donor_id")["amount"].sum().reset_index()
 gifts_summed_january_2018 = gifts_january_2018.groupby("donor_id")["amount"].sum().reset_index()
+
+# Sum of donations for each donor
+gifts_summed_january_2017 = gifts_january_2017.groupby("donor_id")["amount"].sum().reset_index()
+gifts_summed_january_2018 = gifts_january_2018.groupby("donor_id")["amount"].sum().reset_index()
+
+# List with targets in January 2017
+targets_january_2017 = list(gifts_summed_january_2017["donor_id"][gifts_summed_january_2017["amount"] >= 500])
+targets_january_2018 = list(gifts_summed_january_2018["donor_id"][gifts_summed_january_2018["amount"] >= 500])
