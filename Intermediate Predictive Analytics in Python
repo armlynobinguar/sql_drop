@@ -355,3 +355,11 @@ targets_january_2018 = list(gifts_summed_january_2018["donor_id"][gifts_summed_j
 # Add targets to the basetables
 basetable_january_2017["target"] = pd.Series([1 if donor_id in targets_january_2017 else 0 for donor_id in basetable_january_2017["donor_id"]])
 basetable_january_2018["target"] = pd.Series([1 if donor_id in targets_january_2018 else 0 for donor_id in basetable_january_2018["donor_id"]])
+
+# Maximum of donations for each donor in december 2016
+gifts_max_december_2016 = gifts_december_2016.groupby("donor_id")["amount"].max().reset_index()
+gifts_max_december_2016.columns = ["donor_id", "max_amount"]
+
+# Maximum of donations for each donor in december 2017
+gifts_max_december_2017 = gifts_december_2017.groupby("donor_id")["amount"].max().reset_index()
+gifts_max_december_2017.columns = ["donor_id", "max_amount"]
