@@ -444,3 +444,12 @@ basetable["age"] = pd.Series([calculate_age(date_of_birth, reference_date)
 
 # Calculate mean age
 print(round(basetable["age"].mean()))
+
+# Start of the target is January 1st 2017
+start_target = datetime(year=2017, month=1, day=1)
+
+# Select gifts made before start_target
+gifts_before_2017 = gifts[gifts["date"] < start_target]
+
+# Print the number of donations in gifts_before_2017
+print(len(gifts_before_2017))
