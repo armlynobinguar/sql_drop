@@ -401,3 +401,10 @@ print(len(basetable))
 # Start and end date of last month
 start_date = datetime.date(2018, 4, 1)
 end_date = datetime.date(2018, 5, 1)
+
+# Start and end date of last month
+start_date = datetime.date(2018, 4, 1)
+end_date = datetime.date(2018, 5, 1)
+
+# Gifts made last month
+gifts_last_month = gifts[(gifts["date"] >= start_date) & (gifts["date"] < end_date)]
