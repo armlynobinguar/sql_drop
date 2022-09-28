@@ -388,3 +388,12 @@ basetable = basetable.append(basetable_january_2018)
 
 # Number of observations in the final basetable
 print(len(basetable))
+
+# Add basetable_january_2017 to basetable_january_2016
+basetable = basetable_january_2016.append(basetable_january_2017)
+
+# Add basetable_january_2018 to basetable
+basetable = basetable.append(basetable_january_2018)
+
+# Number of observations in the final basetable
+print(len(basetable))
