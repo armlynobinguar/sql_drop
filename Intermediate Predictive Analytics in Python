@@ -397,3 +397,7 @@ basetable = basetable.append(basetable_january_2018)
 
 # Number of observations in the final basetable
 print(len(basetable))
+
+# Start and end date of last month
+start_date = datetime.date(2018, 4, 1)
+end_date = datetime.date(2018, 5, 1)
